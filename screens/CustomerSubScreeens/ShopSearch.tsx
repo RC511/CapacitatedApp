@@ -21,7 +21,7 @@ export default function ShopSearch() {
         const shopData = updatedShops.filter(
           (shops) => {
             const shopupname = shops.ShopName.toUpperCase();
-            return shopupname.indexOf(Search.toUpperCase());
+            return shopupname.indexOf(Search.toUpperCase()) > -1;
           }
         );
         setShops(shopData);
@@ -37,7 +37,7 @@ export default function ShopSearch() {
 
   return (
     <View style={styles.container}>
-      <Text>Search for your designated shop here!</Text>
+      <Text style={{padding: 10,}}>Search for your designated shop here!</Text>
       <TextInput
         style={styles.textInput}
         value={Search}
@@ -55,12 +55,13 @@ export default function ShopSearch() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ecf0f1',
     alignItems: 'center',
     justifyContent: 'center',
   },
   textInput: {
     width: "80%",
+    margin: 10,
     padding: 10,
   }
 });

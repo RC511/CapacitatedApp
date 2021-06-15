@@ -12,6 +12,7 @@ export default function ShopBar({ item }) {
         flexDirection:'column',
         flex:1,
         height:200,
+        paddingBottom: 30,
       }}
     >
       <TouchableOpacity style={{
@@ -20,14 +21,14 @@ export default function ShopBar({ item }) {
         resizeMode: 'cover'}}>
         <Card containerStyle={{flexDirection:'column',borderRadius:10}}>
               
-              <ImageBackground
-              style={{
-                width: '100%',
-                height: '100%',
-                resizeMode: 'contain',
+          <ImageBackground
+            style={{
+              width: '100%',
+              height: '100%',
+              resizeMode: 'contain',
                 
-                borderRadius:10,
-                overflow:'hidden'
+              borderRadius:10,
+              overflow:'hidden'
               }}
               source={{uri:item.image}}
               />
@@ -43,11 +44,10 @@ export default function ShopBar({ item }) {
               </Text>
             </View>
             <Text style={{position:'absolute', bottom:0,fontSize: 20, fontWeight: 'bold', paddingLeft: 3,
-                          color:'white' }}>
+                          color:'black', backgroundColor: 'white', }}>
             {item.ShopName}
-          </Text>
-         
-          </Card>
+            </Text>
+        </Card>
       </TouchableOpacity>
     </View>
   );
